@@ -12,8 +12,8 @@
         <link rel="stylesheet" href="css/leaflet-measure.css">
         <style>
         #map {
-            width: 1460px;
-            height: 809px;
+            width: 1220px;
+            height: 779px;
         }
         </style>
         <title>Suivi de la collecte d'indices biologiques de loup au cours de l'hiver 2023-2024, mis à jour le 28/11/2023 - OFB DIR PACA Corse</title>
@@ -63,7 +63,7 @@
             continuousWorld: false,
             worldCopyJump: false, 
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[43.31138688245137,3.7842911333647846],[45.336565958342646,8.645489978128163]]);
+        }).fitBounds([[42.91411774857419,4.612784657232242],[44.939585408780076,8.830771782329766]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -192,7 +192,7 @@
                 interactive: true,
             }
             }
-            if (feature.properties['Nb_Indice'] >= 0.000000 && feature.properties['Nb_Indice'] <= 6.000000 ) {
+            if (feature.properties['Nb_Indice'] >= 0.000000 && feature.properties['Nb_Indice'] <= 5.000000 ) {
                 return {
                 pane: 'pane_Maillagecollecte8indices_2',
                 opacity: 1,
@@ -207,7 +207,7 @@
                 interactive: true,
             }
             }
-            if (feature.properties['Nb_Indice'] >= 6.000000 && feature.properties['Nb_Indice'] <= 8.000000 ) {
+            if (feature.properties['Nb_Indice'] >= 5.000000 && feature.properties['Nb_Indice'] <= 8.000000 ) {
                 return {
                 pane: 'pane_Maillagecollecte8indices_2',
                 opacity: 1,
