@@ -1,5 +1,5 @@
 ol.proj.proj4.register(proj4);
-ol.proj.get("EPSG:2154").setExtent([628938.870614, 6248716.937264, 1237397.699857, 6571662.035769]);
+ol.proj.get("EPSG:2154").setExtent([850596.009503, 6348303.309988, 1124256.317373, 6519695.343443]);
 var wms_layers = [];
 
 var lyr_ScanRgionalFXXWM082021_0 = new ol.layer.Tile({
@@ -43,7 +43,7 @@ var lyr_ZPP_ETE_2023_2 = new ol.layer.Vector({
                 source:jsonSource_ZPP_ETE_2023_2, 
                 style: style_ZPP_ETE_2023_2,
                 interactive: true,
-    title: 'ZPP_ETE_2023 <br />\
+    title: 'ZPP_ETE_2023<br />\
     <img src="styles/legend/ZPP_ETE_2023_2_0.png" /> ZPP<br />\
     <img src="styles/legend/ZPP_ETE_2023_2_1.png" /> Secteur à surveiller<br />'
         });
@@ -92,7 +92,7 @@ lyr_DPT_AURA_PACA_1.set('fieldImages', {'code_insee': 'TextEdit', 'nom': 'TextEd
 lyr_ZPP_ETE_2023_2.set('fieldImages', {'polygone_2': 'TextEdit', 'Id': 'Range', 'ETE_23': 'Range', });
 lyr_MaillageEffort_3.set('fieldImages', {'CODE_10KM': 'TextEdit', 'Nb_Indices': 'TextEdit', });
 lyr_MaillageEffort_4.set('fieldImages', {'CODE_10KM': 'TextEdit', 'Nb_Indices': 'TextEdit', });
-lyr_DPT_AURA_PACA_1.set('fieldLabels', {'code_insee': 'no label', 'nom': 'no label', });
+lyr_DPT_AURA_PACA_1.set('fieldLabels', {'code_insee': 'no label', 'nom': 'header label', });
 lyr_ZPP_ETE_2023_2.set('fieldLabels', {'polygone_2': 'no label', 'Id': 'no label', 'ETE_23': 'no label', });
 lyr_MaillageEffort_3.set('fieldLabels', {'CODE_10KM': 'inline label', 'Nb_Indices': 'inline label', });
 lyr_MaillageEffort_4.set('fieldLabels', {'CODE_10KM': 'inline label', 'Nb_Indices': 'inline label', });
