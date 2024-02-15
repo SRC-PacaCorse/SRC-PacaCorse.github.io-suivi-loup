@@ -1,5 +1,5 @@
 ol.proj.proj4.register(proj4);
-ol.proj.get("EPSG:2154").setExtent([850596.009503, 6348303.309988, 1124256.317373, 6519695.343443]);
+ol.proj.get("EPSG:2154").setExtent([544112.053708, 6194749.644478, 1414934.030329, 6636423.580087]);
 var wms_layers = [];
 
 var lyr_ScanRgionalFXXWM082021_0 = new ol.layer.Tile({
@@ -28,7 +28,7 @@ var lyr_DPT_AURA_PACA_1 = new ol.layer.Vector({
                 declutter: true,
                 source:jsonSource_DPT_AURA_PACA_1, 
                 style: style_DPT_AURA_PACA_1,
-                interactive: true,
+                interactive: false,
                 title: '<img src="styles/legend/DPT_AURA_PACA_1.png" /> DPT_AURA_PACA'
             });
 var format_ZPP_ETE_2023_2 = new ol.format.GeoJSON();
@@ -92,10 +92,10 @@ lyr_DPT_AURA_PACA_1.set('fieldImages', {'code_insee': 'TextEdit', 'nom': 'TextEd
 lyr_ZPP_ETE_2023_2.set('fieldImages', {'polygone_2': 'TextEdit', 'Id': 'Range', 'ETE_23': 'Range', });
 lyr_MaillageEffort_3.set('fieldImages', {'CODE_10KM': 'TextEdit', 'Nb_Indices': 'TextEdit', });
 lyr_MaillageEffort_4.set('fieldImages', {'CODE_10KM': 'TextEdit', 'Nb_Indices': 'TextEdit', });
-lyr_DPT_AURA_PACA_1.set('fieldLabels', {'code_insee': 'no label', 'nom': 'header label', });
+lyr_DPT_AURA_PACA_1.set('fieldLabels', {'code_insee': 'no label', 'nom': 'no label', });
 lyr_ZPP_ETE_2023_2.set('fieldLabels', {'polygone_2': 'no label', 'Id': 'no label', 'ETE_23': 'no label', });
-lyr_MaillageEffort_3.set('fieldLabels', {'CODE_10KM': 'inline label', 'Nb_Indices': 'inline label', });
-lyr_MaillageEffort_4.set('fieldLabels', {'CODE_10KM': 'inline label', 'Nb_Indices': 'inline label', });
+lyr_MaillageEffort_3.set('fieldLabels', {'CODE_10KM': 'header label', 'Nb_Indices': 'header label', });
+lyr_MaillageEffort_4.set('fieldLabels', {'CODE_10KM': 'header label', 'Nb_Indices': 'header label', });
 lyr_MaillageEffort_4.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
 });
