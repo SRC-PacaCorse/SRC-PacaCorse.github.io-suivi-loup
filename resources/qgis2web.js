@@ -125,7 +125,7 @@ layerSwitcher.hidePanel = function() {};
 layerSwitcher.showPanel();
 
 
-map.getView().fit([544112.053708, 6194749.644478, 1414934.030329, 6636423.580087], map.getSize());
+map.getView().fit([729552.798727, 6226027.850211, 1216050.730508, 6472775.706793], map.getSize());
 
 var NO_POPUP = 0
 var ALL_FIELDS = 1
@@ -847,17 +847,6 @@ var geolocateOverlay = new ol.layer.Vector({
 
 geolocation.setTracking(true);
 
-
-var geocoder = new Geocoder('nominatim', {
-  provider: 'osm',
-  lang: 'en-US',
-  placeholder: 'Search for ...',
-  limit: 5,
-  keepOpen: true
-});
-map.addControl(geocoder);
-
-document.getElementsByClassName('gcd-gl-btn')[0].className += ' fa fa-search';
 
 var attributionComplete = false;
 map.on("rendercomplete", function(evt) {
