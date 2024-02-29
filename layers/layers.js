@@ -1,5 +1,5 @@
 ol.proj.proj4.register(proj4);
-ol.proj.get("EPSG:2154").setExtent([729552.798727, 6226027.850211, 1216050.730508, 6472775.706793]);
+ol.proj.get("EPSG:2154").setExtent([608150.913933, 6121007.514041, 1445605.937058, 6612037.824147]);
 var wms_layers = [];
 
 var lyr_ScanRgionalFXXWM082021_0 = new ol.layer.Tile({
@@ -28,6 +28,7 @@ var lyr_DPT_AURA_PACA_1 = new ol.layer.Vector({
                 declutter: true,
                 source:jsonSource_DPT_AURA_PACA_1, 
                 style: style_DPT_AURA_PACA_1,
+                popuplayertitle: "DPT_AURA_PACA",
                 interactive: true,
                 title: '<img src="styles/legend/DPT_AURA_PACA_1.png" /> DPT_AURA_PACA'
             });
@@ -42,6 +43,7 @@ var lyr_ZPP_ETE_2023_2 = new ol.layer.Vector({
                 declutter: true,
                 source:jsonSource_ZPP_ETE_2023_2, 
                 style: style_ZPP_ETE_2023_2,
+                popuplayertitle: "ZPP_ETE_2023",
                 interactive: true,
     title: 'ZPP_ETE_2023<br />\
     <img src="styles/legend/ZPP_ETE_2023_2_0.png" /> ZPP<br />\
@@ -58,6 +60,7 @@ var lyr_MaillageEffort_3 = new ol.layer.Vector({
                 declutter: true,
                 source:jsonSource_MaillageEffort_3, 
                 style: style_MaillageEffort_3,
+                popuplayertitle: "Maillage Effort +",
                 interactive: true,
     title: 'Maillage Effort +<br />\
     <img src="styles/legend/MaillageEffort_3_0.png" /> 0<br />\
@@ -76,13 +79,14 @@ var lyr_MaillageEffort_4 = new ol.layer.Vector({
                 declutter: true,
                 source:jsonSource_MaillageEffort_4, 
                 style: style_MaillageEffort_4,
+                popuplayertitle: "Maillage Effort -",
                 interactive: true,
     title: 'Maillage Effort -<br />\
     <img src="styles/legend/MaillageEffort_4_0.png" /> 0<br />\
     <img src="styles/legend/MaillageEffort_4_1.png" /> 1 - 2<br />'
         });
 
-lyr_ScanRgionalFXXWM082021_0.setVisible(true);lyr_DPT_AURA_PACA_1.setVisible(true);lyr_ZPP_ETE_2023_2.setVisible(true);lyr_MaillageEffort_3.setVisible(true);lyr_MaillageEffort_4.setVisible(true);
+lyr_ScanRgionalFXXWM082021_0.setVisible(true);lyr_DPT_AURA_PACA_1.setVisible(true);lyr_ZPP_ETE_2023_2.setVisible(false);lyr_MaillageEffort_3.setVisible(true);lyr_MaillageEffort_4.setVisible(true);
 var layersList = [lyr_ScanRgionalFXXWM082021_0,lyr_DPT_AURA_PACA_1,lyr_ZPP_ETE_2023_2,lyr_MaillageEffort_3,lyr_MaillageEffort_4];
 lyr_DPT_AURA_PACA_1.set('fieldAliases', {'code_insee': 'code_insee', 'nom': 'nom', });
 lyr_ZPP_ETE_2023_2.set('fieldAliases', {'polygone_2': 'polygone_2', 'Id': 'Id', 'ETE_23': 'ETE_23', });
@@ -92,10 +96,10 @@ lyr_DPT_AURA_PACA_1.set('fieldImages', {'code_insee': 'TextEdit', 'nom': 'TextEd
 lyr_ZPP_ETE_2023_2.set('fieldImages', {'polygone_2': 'TextEdit', 'Id': 'Range', 'ETE_23': 'Range', });
 lyr_MaillageEffort_3.set('fieldImages', {'CODE_10KM': 'TextEdit', 'Nb_Indices': 'TextEdit', });
 lyr_MaillageEffort_4.set('fieldImages', {'CODE_10KM': 'TextEdit', 'Nb_Indices': 'TextEdit', });
-lyr_DPT_AURA_PACA_1.set('fieldLabels', {'code_insee': 'no label', 'nom': 'no label', });
-lyr_ZPP_ETE_2023_2.set('fieldLabels', {'polygone_2': 'no label', 'Id': 'no label', 'ETE_23': 'no label', });
-lyr_MaillageEffort_3.set('fieldLabels', {'CODE_10KM': 'inline label', 'Nb_Indices': 'inline label', });
-lyr_MaillageEffort_4.set('fieldLabels', {'CODE_10KM': 'inline label', 'Nb_Indices': 'inline label', });
+lyr_DPT_AURA_PACA_1.set('fieldLabels', {'code_insee': 'no label', 'nom': 'hidden field', });
+lyr_ZPP_ETE_2023_2.set('fieldLabels', {'polygone_2': 'hidden field', 'Id': 'hidden field', 'ETE_23': 'hidden field', });
+lyr_MaillageEffort_3.set('fieldLabels', {'CODE_10KM': 'inline label - always visible', 'Nb_Indices': 'inline label - always visible', });
+lyr_MaillageEffort_4.set('fieldLabels', {'CODE_10KM': 'inline label - always visible', 'Nb_Indices': 'inline label - always visible', });
 lyr_MaillageEffort_4.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
 });

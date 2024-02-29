@@ -5,7 +5,7 @@ function categories_ZPP_ETE_2023_2(feature, value, size, resolution, labelText,
                        placement) {
                 switch(value.toString()) {case '1':
                     return [ new ol.style.Style({
-        stroke: new ol.style.Stroke({color: 'rgba(22,48,238,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2}),
+        stroke: new ol.style.Stroke({color: 'rgba(22,48,238,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2.508}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
@@ -13,7 +13,7 @@ function categories_ZPP_ETE_2023_2(feature, value, size, resolution, labelText,
                     break;
 case '4':
                     return [ new ol.style.Style({
-        stroke: new ol.style.Stroke({color: 'rgba(172,32,232,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2}),
+        stroke: new ol.style.Stroke({color: 'rgba(172,32,232,1.0)', lineDash: null, lineCap: 'square', lineJoin: 'bevel', width: 2.508}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)

@@ -22,14 +22,14 @@ var style_MaillageEffort_4 = function(feature, resolution){
     }
     if (value >= 0.000000 && value <= 0.000000) {
             style = [ new ol.style.Style({
-        stroke: new ol.style.Stroke({color: 'rgba(250,196,1,0.5)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 1}),fill: new ol.style.Fill({color: 'rgba(249,196,1,0.0)'}),
+        stroke: new ol.style.Stroke({color: 'rgba(250,196,1,0.5)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 1.748}),fill: new ol.style.Fill({color: 'rgba(249,196,1,0.0)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
     })]
                     } else if (value >= 0.000000 && value <= 200.000000) {
             style = [ new ol.style.Style({
-        stroke: new ol.style.Stroke({color: 'rgba(250,196,1,0.5)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 1}),fill: new ol.style.Fill({color: 'rgba(31,120,180,0.5)'}),
+        stroke: new ol.style.Stroke({color: 'rgba(250,196,1,0.5)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 1.748}),fill: new ol.style.Fill({color: 'rgba(31,120,180,0.5)'}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
