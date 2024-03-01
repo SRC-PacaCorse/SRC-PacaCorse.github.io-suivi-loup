@@ -114,7 +114,7 @@ var map = new ol.Map({
     view: new ol.View({
          maxZoom: 28, minZoom: 1, projection: new ol.proj.Projection({
             code: 'EPSG:2154',
-            extent: [-6.420881, 40.809713, 1080000.000000, 6604377.339359],
+            extent: [-96073.001251, 5967359.656794, 1472276.164766, 7189137.491944],
             units: 'm'})
     })
 });
@@ -125,7 +125,7 @@ layerSwitcher.hidePanel = function() {};
 layerSwitcher.showPanel();
 
 
-map.getView().fit([608150.913933, 6121007.514041, 1445605.937058, 6612037.824147], map.getSize());
+map.getView().fit([731970.718953, 6208871.905930, 1199414.251917, 6443752.144613], map.getSize());
 
 var NO_POPUP = 0
 var ALL_FIELDS = 1
@@ -182,7 +182,7 @@ function createPopupField(currentFeature, currentFeatureKeys, layer) {
             }
             if (layer.get('fieldLabels')[currentFeatureKeys[i]] == "inline label - always visible" ||
                 layer.get('fieldLabels')[currentFeatureKeys[i]] == "inline label - visible with data") {
-                popupField += '<th>' + layer.get('fieldAliases')[currentFeatureKeys[i]] + '</th><td>';
+                popupField += '<th>' + layer.get('fieldAliases')[currentFeatureKeys[i]] + ':</th><td>';
             } else {
                 popupField += '<td colspan="2">';
             }
@@ -193,7 +193,7 @@ function createPopupField(currentFeature, currentFeatureKeys, layer) {
             }
             if (layer.get('fieldLabels')[currentFeatureKeys[i]] == "header label - always visible" ||
                 layer.get('fieldLabels')[currentFeatureKeys[i]] == "header label - visible with data") {
-                popupField += '<strong>' + layer.get('fieldAliases')[currentFeatureKeys[i]] + '</strong><br />';
+                popupField += '<strong>' + layer.get('fieldAliases')[currentFeatureKeys[i]] + ':</strong><br />';
             }
             if (layer.get('fieldImages')[currentFeatureKeys[i]] != "ExternalResource") {
                 popupField += (currentFeature.get(currentFeatureKeys[i]) != null ? autolinker.link(currentFeature.get(currentFeatureKeys[i]).toLocaleString()) + '</td>' : '');
@@ -240,10 +240,9 @@ var onPointerMove = function(evt) {
         if (typeof clusteredFeatures !== "undefined") {
             if (doPopup) {
                 for(var n=0; n<clusteredFeatures.length; n++) {
-                    currentFeature = clusteredFeatures[n];
-                    currentFeatureKeys = currentFeature.getKeys();
+                    clusterFeature = clusteredFeatures[n];
+                    currentFeatureKeys = clusterFeature.getKeys();
                     popupText += '<li><table>'
-					popupText += '<a>' + '<b>' + 'Layer' + ':&nbsp;' + layer.get('popuplayertitle') + '</b>' + '</a>';
 					popupText += createPopupField(currentFeature, currentFeatureKeys, layer);
                     popupText += '</table></li>';    
                 }
@@ -252,7 +251,6 @@ var onPointerMove = function(evt) {
             currentFeatureKeys = currentFeature.getKeys();
             if (doPopup) {
                 popupText += '<li><table>';
-				popupText += '<a>' + '<b>' + 'Layer' + ':&nbsp;' + layer.get('popuplayertitle') + '</b>' + '</a>';
 				popupText += createPopupField(currentFeature, currentFeatureKeys, layer);
                 popupText += '</table></li>';
             }
@@ -336,7 +334,7 @@ var onSingleClick = function(evt) {
     var clusteredFeatures;
     var popupText = '<ul>';
     map.forEachFeatureAtPixel(pixel, function(feature, layer) {
-        if (layer && feature instanceof ol.Feature && (layer.get("interactive") || layer.get("interactive") == undefined)) {
+        if (feature instanceof ol.Feature && (layer.get("interactive") || layer.get("interactive") == undefined)) {
             var doPopup = false;
             for (k in layer.get('fieldImages')) {
                 if (layer.get('fieldImages')[k] != "Hidden") {
@@ -349,10 +347,9 @@ var onSingleClick = function(evt) {
             if (typeof clusteredFeatures !== "undefined") {
                 if (doPopup) {
                     for(var n=0; n<clusteredFeatures.length; n++) {
-                        currentFeature = clusteredFeatures[n];
-                        currentFeatureKeys = currentFeature.getKeys();
+                        clusterFeature = clusteredFeatures[n];
+                        currentFeatureKeys = clusterFeature.getKeys();
                         popupText += '<li><table>'
-						popupText += '<a>' + '<b>' + 'Layer' + ':&nbsp;' + layer.get('popuplayertitle') + '</b>' + '</a>';
 						popupText += createPopupField(currentFeature, currentFeatureKeys, layer);
                         popupText += '</table></li>';    
                     }
@@ -361,7 +358,6 @@ var onSingleClick = function(evt) {
                 currentFeatureKeys = currentFeature.getKeys();
                 if (doPopup) {
                     popupText += '<li><table>';
-					popupText += '<a>' + '<b>' + 'Layer' + ':&nbsp;' + layer.get('popuplayertitle') + '</b>' + '</a>';
 					popupText += createPopupField(currentFeature, currentFeatureKeys, layer);
                     popupText += '</table>';
                 }
