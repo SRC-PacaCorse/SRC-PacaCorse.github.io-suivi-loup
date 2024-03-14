@@ -114,7 +114,7 @@ var map = new ol.Map({
     view: new ol.View({
          maxZoom: 28, minZoom: 1, projection: new ol.proj.Projection({
             code: 'EPSG:2154',
-            extent: [-96073.001128, 5967359.657129, 1472276.165148, 7189137.491714],
+            extent: [-6.420881, 40.809713, 1080000.000000, 6604377.339359],
             units: 'm'})
     })
 });
@@ -125,7 +125,7 @@ layerSwitcher.hidePanel = function() {};
 layerSwitcher.showPanel();
 
 
-map.getView().fit([833050.890205, 6196452.587440, 1154515.000227, 6372368.507297], map.getSize());
+map.getView().fit([610160.919282, 6207701.285942, 1395239.080882, 6637322.331191], map.getSize());
 
 var NO_POPUP = 0
 var ALL_FIELDS = 1

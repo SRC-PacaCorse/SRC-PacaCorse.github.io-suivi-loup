@@ -1,5 +1,5 @@
 ol.proj.proj4.register(proj4);
-ol.proj.get("EPSG:2154").setExtent([833050.890205, 6196452.587440, 1154515.000227, 6372368.507297]);
+ol.proj.get("EPSG:2154").setExtent([610160.919282, 6207701.285942, 1395239.080882, 6637322.331191]);
 var wms_layers = [];
 
 var lyr_ScanRgionalFXXWM082021_0 = new ol.layer.Tile({
